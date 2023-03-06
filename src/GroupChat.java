@@ -4,6 +4,7 @@ import java.util.Queue;
 public class GroupChat {
 
     private Queue<Message> messages;
+    private static final int MAX = 5;
 
     public GroupChat() {
         messages = new LinkedList<>();
@@ -22,5 +23,9 @@ public class GroupChat {
         while(messages.peek() != null) {
             System.out.println(messages.poll());
         }
+    }
+
+    public boolean isFull() {
+        return messages.size() >= MAX;
     }
 }
