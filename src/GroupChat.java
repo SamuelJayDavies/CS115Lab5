@@ -11,6 +11,9 @@ public class GroupChat {
     }
 
     public void send(Message message) {
+        if(isFull()) {
+            messages.remove();
+        }
         messages.add(message);
         System.out.println(message);
     }
