@@ -22,7 +22,7 @@ public class Message {
         if(person.isPremium()) {
             chatUsername = "$ " + chatUsername + " $";
         }
-        return "Sent by: " + chatUsername + "\nSent at: " + dateTime + "\nMessage: " + message;
+        return "Sent by: " + chatUsername + "\nSent at: " + dateTime + "\nMessage: " + message + "\n";
     }
 
 }
