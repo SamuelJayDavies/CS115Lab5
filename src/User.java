@@ -9,7 +9,15 @@ public class User {
     }
 
     public void send(GroupChat gc, Message message) {
-        gc.send(message);
+        if(isPremium) {
+            gc.send(message);
+        } else {
+            if(!(gc.isFull())) {
+                gc.send(message);
+            } else {
+                System.out.println("Error: Chat is currently full\n");
+            }
+        }
     }
 
     public void receive(GroupChat gc) {
@@ -17,7 +25,11 @@ public class User {
     }
 
     public void dump(GroupChat gc) {
-        gc.dump();
+        if(isPremium){
+            gc.dump();
+        } else {
+            System.out.println("Error: Only Premium users are allowed to use the dump feature\n");
+        }
     }
 
     public String getUserName() {
