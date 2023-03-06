@@ -16,5 +16,16 @@ public class Test {
         Message test2 = new Message("Test 2", bob);
         bob.send(chat, test2);
         bob.receive(chat);
+
+        sam.dump(chat);
+        bob.dump(chat);
+
+        sam.send(chat, test1);
+        sam.send(chat, test1);
+        sam.send(chat, test1);
+        sam.send(chat, test1);
+        sam.send(chat, test1);
+        bob.send(chat, test2);
+        sam.send(chat, test1);
     }
 }
